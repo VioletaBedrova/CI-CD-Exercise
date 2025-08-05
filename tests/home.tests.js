@@ -1,3 +1,4 @@
+const { suite, test } = require('mocha');
 const assert = require('assert');
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 

@@ -1,3 +1,5 @@
+const { suite, test, setup, teardown } = require('mocha');
+
 let server;
 
 setup(function() {
