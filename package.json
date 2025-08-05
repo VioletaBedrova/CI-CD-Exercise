@@ -10,7 +10,7 @@
     "pug": "^3.0.3"
   },
   "scripts": {
-    "test": "mocha tests/*.js",
+    "test": "mocha --no-parallel --exit tests/setup-tests.js tests/*.js",
     "start": "node index.js"
   }
 }
