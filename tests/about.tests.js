@@ -1,9 +1,9 @@
-const { suite, test } = require('mocha');
+const { describe, it } = require('mocha');
 const assert = require('assert');
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
-suite('About page', function() {
-  test('Page title', async function() {
+describe('About page', function() {
+  it('Page title', async function() {
     let res = await fetch("http://localhost:8080/about");
     let body = await res.text();
     assert.ok(body.includes("<title>About</title>"));

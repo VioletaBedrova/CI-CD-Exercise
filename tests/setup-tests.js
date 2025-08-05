@@ -1,8 +1,8 @@
-const { suite, test, setup, teardown } = require('mocha');
+const { describe, it, before, after } = require('mocha');
 
 let server;
 
-setup(function() {
+before(function() {
   let students = [
     {"name" : "Steve", "email" : "steve@gmail.com"},
     {"name" : "Tina", "email" : "tina@yahoo.com"}
@@ -19,6 +19,6 @@ setup(function() {
   server.listen(8080);
 });
 
-teardown(function() {
+after(function() {
   server.close();
 });

@@ -1,15 +1,15 @@
-const { suite, test } = require('mocha');
+const { describe, it } = require('mocha');
 const assert = require('assert');
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
-suite('View Students page', function() {
-  test('Page title', async function() {
+describe('View Students page', function() {
+  it('Page title', async function() {
     let res = await fetch("http://localhost:8080/students");
     let body = await res.text();
     assert.ok(body.includes("<h1>Registered Students</h1>"));
   });
   
-  test('Students list', async function() {
+  it('Students list', async function() {
     let res = await fetch("http://localhost:8080/students");
     let body = await res.text();
     assert.ok(body.includes("<ul><li>Steve (steve@gmail.com)</li><li>Tina (tina@yahoo.com)</li></ul>"));
